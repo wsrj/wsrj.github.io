@@ -14,8 +14,56 @@
   --bg-image: url(/source/image/bg.jpg);
 }
 
+@font-face {
+  font-family: sarasa;
+  src: url("/fonts/SarasaUiSC-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: sarasa;
+  src: url("/fonts/SarasaUiSC-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: sarasa;
+  src: url("/fonts/SarasaUiSC-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: sarasa;
+  src: url("/fonts/SarasaUiSC-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: sarasa-f;
+  src: url("/fonts/SarasaFixedSC-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: sarasa-f;
+  src: url("/fonts/SarasaFixedSC-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: sarasa-f;
+  src: url("/fonts/SarasaFixedSC-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: sarasa-f;
+  src: url("/fonts/SarasaFixedSC-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: sarasa;
   color: var(--black-main);
   margin: 0 auto;
   background-image: var(--bg-image);
@@ -647,6 +695,54 @@ footer {
   text-shadow: 0 0 10px var(--white-main), 0 0 10px var(--white-main), 0 0 10px var(--white-main), 0 0 10px var(--white-main), 0 0 10px var(--white-main), 0 0 10px var(--white-main);
 }
 
+@font-face {
+  font-family: sarasa;
+  src: url("/fonts/SarasaUiSC-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: sarasa;
+  src: url("/fonts/SarasaUiSC-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: sarasa;
+  src: url("/fonts/SarasaUiSC-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: sarasa;
+  src: url("/fonts/SarasaUiSC-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: sarasa-f;
+  src: url("/fonts/SarasaFixedSC-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: sarasa-f;
+  src: url("/fonts/SarasaFixedSC-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: sarasa-f;
+  src: url("/fonts/SarasaFixedSC-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: sarasa-f;
+  src: url("/fonts/SarasaFixedSC-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
 .post-content h1,
 .post-content h2,
 .post-content h3,
@@ -754,7 +850,8 @@ footer {
   color: var(--primary-color);
   padding: 0.2em 0.4em;
   border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  /* font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; */
+  font-family: sarasa-f;
   font-size: 85%;
 }
 
@@ -766,7 +863,8 @@ footer {
   border-radius: 3px;
   overflow-x: auto;
   line-height: 1.45;
-  font-family: Consolas, monospace;
+  /*font-family: Consolas, monospace;*/
+  font-family: sarasa-f;
   font-size: 14px;
 }
 
@@ -879,57 +977,65 @@ footer {
 }
 :root {
   --bg-image: url(/image/bg.jpg);
+}
+
+/*
+@font-face {
   font-family: sarasa;
+  src: url('/fonts/SarasaUiSC-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: sarasa;
-  src: url("/fonts/SarasaUiSC-Regular.ttf");
-  font-weight: normal;
+  src: url('/fonts/SarasaUiSC-Bold.ttf');
+  font-weight: bold;
   font-style: normal;
 }
+
 @font-face {
   font-family: sarasa;
-  src: url("/fonts/SarasaUiSC-Bold.ttf");
+  src: url('/fonts/SarasaUiSC-BoldItalic.ttf');
   font-weight: bold;
-  font-style: normal;
+  font-style: italic;
 }
+
 @font-face {
   font-family: sarasa;
-  src: url("/fonts/SarasaUiSC-BoldItalic.ttf");
-  font-weight: bold;
-  font-style: italic;
-}
-@font-face {
-  font-family: sarasa;
-  src: url("/fonts/SarasaUiSC-Italic.ttf");
+  src: url('/fonts/SarasaUiSC-Italic.ttf');
   font-weight: normal;
   font-style: italic;
 }
+
 @font-face {
   font-family: sarasa-f;
-  src: url("/fonts/SarasaFixedSC-Regular.ttf");
+  src: url('/fonts/SarasaFixedSC-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: sarasa-f;
-  src: url("/fonts/SarasaFixedSC-Bold.ttf");
+  src: url('/fonts/SarasaFixedSC-Bold.ttf');
   font-weight: bold;
   font-style: normal;
 }
+
 @font-face {
   font-family: sarasa-f;
-  src: url("/fonts/SarasaFixedSC-BoldItalic.ttf");
+  src: url('/fonts/SarasaFixedSC-BoldItalic.ttf');
   font-weight: bold;
   font-style: italic;
 }
+
 @font-face {
   font-family: sarasa-f;
-  src: url("/fonts/SarasaFixedSC-Italic.ttf");
+  src: url('/fonts/SarasaFixedSC-Italic.ttf');
   font-weight: normal;
   font-style: italic;
 }
+
 body {
   font-family: sarasa;
   font-size: 10pt;
@@ -945,11 +1051,12 @@ code, pre, kbd, samp {
 }
 
 a:link, a:visited, a:active {
-  color: #0066cc;
-  text-decoration: none;
+	color: #0066cc;
+	text-decoration: none;
 }
 
 a:hover {
-  color: #3399ff;
-  text-decoration: none;
+	color: #3399ff;
+	text-decoration: none;
 }
+*/
