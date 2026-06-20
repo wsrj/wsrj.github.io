@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>
+        该昵称己被占用_ 的小站
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        
+            <link rel="icon" href="/image/icon/vista_messenger.jpg">
+        
+    
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <div class="container">
+        <!-- header -->
+        <div class="header" id="pjax-header">
+    <header class="card">
+        <p class="blog-title">
+            Windows
+        </p>
+    </header>
+    <nav class="button-bar">
+        <ul class="nav-links">
+            <li>
+                <a href="/" class="button link-home ">
+                    <span class="nav-text">
+                        <img src="/image/icon/vista_messenger.jpg" alt="home" class="icon">
+                        <span>Home</span>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives" class="button ">
+                    <span class="nav-text">
+                        <img src="/image/icon/vista_book_1.jpg" alt="posts" class="icon">Archives    
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/about" class="button ">
+                    <span class="nav-text">
+                        <img src="/image/icon/vista_pc_1.jpg" alt="about" class="icon">About
+                    </span>
+                </a>
+            </li>
+            
+        </ul>
+
+    </nav>
+</div>
+
+        <div class="button mobile-menu-btn" id="mobile-menu-btn">
+            <span class="menu-icon">☰</span>
+        </div>
+
+            <div class="main-layout">
+                <aside id="sidebar">
+                    <div class="widget avatar-widget">
+    <div class="avatar-bg">
+        <a target="_blank" rel="noopener" href="https://space.bilibili.com/3493134929496963">
+            <img src="https://avatars.githubusercontent.com/wsrj" class="profile-img">
+        </a>
+    </div>
+</div>
+<div class="widget card profile-widget">
+    <div class="profile">
+        <div>该昵称己被占用_</div>
+        <div>
+            
+            
+                <a href="https://github.com/wsrj" class="button profile-link" target="_blank" title="Github">
+                    <img src="/image/icon/github.png" class="profile-icon" alt="Github">
+                </a>
+            
+                <a href="https://space.bilibili.com/3493134929496963" class="button profile-link" target="_blank" title="Bilibili">
+                    <img src="/image/icon/bilibili.png" class="profile-icon" alt="Bilibili">
+                </a>
+            
+        
+        </div>
+    </div>
+    <div class="about">
+        The “Wow” starts now.
+    </div>
+</div>
+
+
+<div class="widget music-widget">
+    <div class="player-content">
+        <div class="song-info">
+            <div class="info-bg album-art" id="albumArt"></div>
+            <div class="info-bg title-bar">
+                <span class="song-title" id="songTitle">Loading...</span>
+            </div>
+        </div>
+
+        <div class="info-bg progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="controls">
+            <button class="button play-btn" id="playBtn">
+                <span id="playIcon">▶</span>
+            </button>
+            <button class="button ctrl-btn" id="prevBtn">
+                <span>⏮</span>
+            </button>
+            <button class="button ctrl-btn" id="nextBtn">
+                <span>⏭</span>
+            </button>
+        </div>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+</div>
+
+<script>
+    var musicConfig = {
+        autoplay: false,
+        playlist: [{"title":"Kalimba","artist":"Mr Scruff","cover":"/image/cv_kalimba.jpg","url":"/image/au_kalimba.mp3"},{"title":"辞九门回忆 DJ","artist":"等什么君","cover":"/image/bg.jpg","url":"/image/au_cjmhy.mp3"}]
+    };
+</script>
+                </aside>
+                <main id="pjax-container">
+                    <div class="card post-full">
+    <span class="post-title article-title">
+        用 VB 制作的桌面弹幕程序？！
+    </span>
+
+    <div class="post-meta">
+        2026-06-14
+        
+            | <a class="tag-none-link" href="/tags/Windows/" rel="tag">Windows</a>
+            
+    </div>
+
+    <div class="post-content">
+        <h1>前言</h1>
+<p>很久之前，我用易语言做了一个简单的能在桌面是发弹幕的程序。</p>
+<p>众所周知，易语言有着诸多不足（如代码是二进制文件），所以我用 Visual Basic 重做了它：<a target="_blank" rel="noopener" href="https://github.com/wsrj/desk-danmaku-vb">https://github.com/wsrj/desk-danmaku-vb</a></p>
+<h1>使用方法</h1>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116391969561535&bvid=BV1E5D9BgENg&cid=37451465206&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+<h2 id="主界面">主界面</h2>
+<p>主界面非常简单，只有弹幕文字、字体和颜色，还有一个比较重要的：弹幕最大宽度。</p>
+<p>为什么要设置这个值呢？看下面“原理”一节就能知道，弹幕文字是被放进一个“容器”（窗口）里的，这个值就是容器的宽度。如果容器宽度不足，文本会换行。</p>
+<p>目前我还做不到根据字号和文本长度计算宽度，所以只能自己选择了。</p>
+<p>填写以上<strong>全部</strong>内容后，单击“发送”按钮，一条“弹幕”就会出现在你的桌面上，是不是很简单？(〜￣△￣)〜</p>
+<h2 id="命令行参数">命令行参数</h2>
+<p>此程序的语法是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">弹幕神器.exe [/?|/C]<br></code></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>/?</code></td>
+<td style="text-align:left">显示帮助信息。<code>-h</code>, <code>--help</code>等价于<code>/?</code>。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/C</code></td>
+<td style="text-align:left">启用控制台。控制台中会显示程序运行时的一些信息。<code>-c</code>,<code>--console</code>等价于<code>/C</code>。</td>
+</tr>
+</tbody>
+</table>
+<h1>原理</h1>
+<h2 id="弹幕">弹幕</h2>
+<p>前面提到，弹幕实际上是被放进一个窗口中的。Win32 API 有两个函数：<code>SetWindowLong</code>和<code>SetLayeredWindowAttributes</code>。微软官网有对应的文档：</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-setwindowlonga">https://learn.microsoft.com/zh-cn/windows/desktop/api/winuser/nf-winuser-setwindowlonga</a><br>
+<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setlayeredwindowattributes%E3%80%82">https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setlayeredwindowattributes。</a></p>
+<p>分层窗口（layered window）支持设置背景透明度。也就是说，使用<code>SetWindowLong</code>给窗口设置<code>WS_EX_LAYERED</code>（分层）样式，再用<code>SetLayeredWindowAttributes</code>设置背景完全透明，就可以得到一个透明的窗口。在窗口上放置一个撑满整个窗口的标签控件，把标签背景改为透明，就可以实现“弹幕”的效果了。</p>
+
+    </div>
+</div>
+                </main>
+                <div class="sidebar-mask" id="sidebar-mask"></div>
+            </div>
+            <!-- footer -->
+            <footer class="card">
+    <div class="copyright">
+        <p>Copyright © 2026
+                该昵称己被占用_
+        </p>
+        <p>Powered by Hexo</p>
+    </div>
+</footer>
+    </div>
+
+    <script src="/js/responsive.js"></script>
+    <script src="/js/music.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new Pjax({
+                elements: 'a[href]:not([target]):not([data-no-pjax])',
+                selectors: [
+                    'title',
+                    '#pjax-container',
+                    '#pjax-header'
+                ]
+            })
+        })
+    </script>
+    
+</body>
+
+</html>
