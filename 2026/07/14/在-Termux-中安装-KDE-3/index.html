@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>
+        该昵称己被占用_ 的小站
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        
+            <link rel="icon" href="/image/icon/vista_messenger.jpg">
+        
+    
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <div class="container">
+        <!-- header -->
+        <div class="header" id="pjax-header">
+    <header class="card">
+        <p class="blog-title">
+            Windows
+        </p>
+    </header>
+    <nav class="button-bar">
+        <ul class="nav-links">
+            <li>
+                <a href="/" class="button link-home ">
+                    <span class="nav-text">
+                        <img src="/image/icon/vista_messenger.jpg" alt="home" class="icon">
+                        <span>主页</span>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives" class="button ">
+                    <span class="nav-text">
+                        <img src="/image/icon/vista_book_1.jpg" alt="posts" class="icon">归档    
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/about" class="button ">
+                    <span class="nav-text">
+                        <img src="/image/icon/vista_pc_1.jpg" alt="about" class="icon">关于
+                    </span>
+                </a>
+            </li>
+            
+        </ul>
+
+    </nav>
+</div>
+
+        <div class="button mobile-menu-btn" id="mobile-menu-btn">
+            <span class="menu-icon">☰</span>
+        </div>
+
+            <div class="main-layout">
+                <aside id="sidebar">
+                    <div class="widget avatar-widget">
+    <div class="avatar-bg">
+        <a target="_blank" rel="noopener" href="https://space.bilibili.com/3493134929496963">
+            <img src="https://avatars.githubusercontent.com/wsrj" class="profile-img">
+        </a>
+    </div>
+</div>
+<div class="widget card profile-widget">
+    <div class="profile">
+        <div>该昵称己被占用_</div>
+        <div>
+            
+            
+                <a href="https://github.com/wsrj" class="button profile-link" target="_blank" title="Github">
+                    <img src="/image/icon/github.png" class="profile-icon" alt="Github">
+                </a>
+            
+                <a href="https://space.bilibili.com/3493134929496963" class="button profile-link" target="_blank" title="Bilibili">
+                    <img src="/image/icon/bilibili.png" class="profile-icon" alt="Bilibili">
+                </a>
+            
+        
+        </div>
+    </div>
+    <div class="about">
+        The “Wow” starts now.
+    </div>
+</div>
+
+
+<div class="widget music-widget">
+    <div class="player-content">
+        <div class="song-info">
+            <div class="info-bg album-art" id="albumArt"></div>
+            <div class="info-bg title-bar">
+                <span class="song-title" id="songTitle">Loading...</span>
+            </div>
+        </div>
+
+        <div class="info-bg progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="controls">
+            <button class="button play-btn" id="playBtn">
+                <span id="playIcon">▶</span>
+            </button>
+            <button class="button ctrl-btn" id="prevBtn">
+                <span>⏮</span>
+            </button>
+            <button class="button ctrl-btn" id="nextBtn">
+                <span>⏭</span>
+            </button>
+        </div>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+</div>
+
+<script>
+    var musicConfig = {
+        autoplay: false,
+        playlist: [{"title":"Kalimba","artist":"Mr Scruff","cover":"/image/cv_kalimba.jpg","url":"/image/au_kalimba.mp3"},{"title":"辞九门回忆 DJ","artist":"等什么君","cover":"/image/bg.jpg","url":"/image/au_cjmhy.mp3"}]
+    };
+</script>
+                </aside>
+                <main id="pjax-container">
+                    <div class="card post-full">
+    <span class="post-title article-title">
+        在 Termux 中安装 KDE
+    </span>
+
+    <div class="post-meta">
+        2026-07-14
+        
+            | <a class="tag-none-link" href="/tags/Termux/" rel="tag">Termux</a>, <a class="tag-none-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a>
+            
+    </div>
+
+    <div class="post-content">
+        <h1>前言</h1>
+<p>本文适合有一定 Termux 使用基础的人阅读。</p>
+<p>可以到哔哩哔哩观看视频作为参考：</p>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116876378117921&bvid=BV1PEMx6vE6P&cid=39719275640&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+<h1>准备工作</h1>
+<p>你需要一台安卓手机（最好是 Arm64-v8a 架构），并安装这两个应用：</p>
+<ul>
+<li>Termux</li>
+<li>Termux:X11</li>
+</ul>
+<blockquote>
+<p>如果你有键鼠的话，可以把它们连接到手机，这会带来更好的体验。</p>
+</blockquote>
+<p>安装好后，打开 Termux，稍等一会儿，在命令行中执行这些命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">termux-change-repo<br>apt install x11-repo tur-repo<br>apt update<br>apt upgrade<br>apt install termux-x11-nightly<br></code></pre></td></tr></table></figure>
+<p>执行 <code>termux-change-repo</code> 后，你会看到下图中的画面。</p>
+<p><img src="https://github.com/user-attachments/assets/0c388b56-650d-4c7c-a245-0b10c10dda28" alt="Screenshot_20260715_015237_com.termux.jpg"></p>
+<p>按向下键使高亮条移动到“Single mirror”，并<strong>按一下空格键</strong>，使星号移动到这一项前面。按回车键继续。</p>
+<p><img src="https://github.com/user-attachments/assets/4c0f96cd-0b79-445a-9d26-592f02f9bc42" alt="Screenshot_20260715_015251_com.termux.jpg"></p>
+<p>按向下键向下滚动，使高亮条移动到“mirrors.tuna”开头的一项，<strong>按一下空格键</strong>使星号移动到这一项前面。按回车键继续。</p>
+<p>接下来，Termux 会自动更新源的设置，等待完成后即可执行剩余四条命令。</p>
+<h1>安装 KDE 桌面环境</h1>
+<p>执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt install plasma<br></code></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt install plasma*<br></code></pre></td></tr></table></figure>
+<p>这两条命令的不同之处在于：第二条使用了通配符，会自动匹配包 <code>plasma</code> 和以“plasma”开头的其他包。实测该命令安装的 KDE 会比第一条多一个欢迎中心。</p>
+<h1>安装 KDE 系列的其他软件</h1>
+<p>上面的命令不会安装 Dolphin（文件管理器）, Konsole（终端模拟器）和 Kate（文本编辑器）等常用附件。</p>
+<p>执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt install dolphin konsole kate<br></code></pre></td></tr></table></figure>
+<p>如果你需要其他 KDE 软件也可以一并安装。执行这条命令查找：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt search kde<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>题外话：Kate 是一个十分强大的文本编辑器。如果你没有调试或远程等需求，它甚至能替代 Code - OSS（VS Code 的开源构建，<code>apt install code-oss</code>），并且使用较为流畅。</p>
+</blockquote>
+<h1>启动图形界面和 KDE</h1>
+<p>执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">termux-x11 :0 &amp;<br><span class="hljs-built_in">export</span> DISPLAY=:0<br></code></pre></td></tr></table></figure>
+<p>在命令后面加 <code> &amp;</code> 可以防止终端被阻塞，比如上面的第一条，否则你需要新开一个会话执行下一条命令。</p>
+<p>:0 是 X11 显示编号，它对应端口 6000。你也可以自定义，比如改成 :1。</p>
+<blockquote>
+<p>或许你在别的地方看到过它，但请注意，不要把它和 VNC 显示编号搞混了，VNC 的 :0 对应端口 5900。</p>
+</blockquote>
+<p><code>export</code> 是设置变量，这里是把 <code>DISPLAY</code> 变量设为你使用的显示编号。</p>
+<p>执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">startplasma-x11<br></code></pre></td></tr></table></figure>
+<p>KDE，启动！</p>
+<p>打开 Termux:X11 应用，稍等一会儿，KDE 的桌面就会出现在你面前了。</p>
+<p>尽情使用吧！</p>
+<h1>启动脚本</h1>
+<p>我们可以用一个脚本简化上述启动流程。</p>
+<p>首先转到被添加到 <code>PATH</code> 变量的目录。由于默认情况下，该变量只包含一个目录（你可以执行 <code>echo $PATH</code> 验证一下），所以直接在地址栏输入 <code>$PATH</code> 并跳转。创建一个文件，随便一个不重复的就行（这里用 <code>runkde</code> 作为示范）。用你喜欢的文本编辑器（比如 Vim, Nano, Kate, Code - OSS）打开它，输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#!/bin/bash<br><br>termux-x11 :0 &amp;<br>sleep 3<br>export DISPLAY=:0<br>startplasma-x11<br>pkill termux-x11<br></code></pre></td></tr></table></figure>
+<p>在这个脚本中，<code>sleep 3</code> 等待三秒让 X11 服务器启动。因为 <code>startplasma-x11</code> 也会阻塞终端直到关闭桌面环境，所以我们可以在它的后面用 <code>pkill</code> 结束 X11 服务器。</p>
+<p>保存文件，先别急着用，执行这条命令给它执行权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x <span class="hljs-variable">$PATH</span>/runkde<br></code></pre></td></tr></table></figure>
+<p>现在你可以试试：结束掉 Termux 应用，重新打开，执行 <code>runkde</code>，打开 Termux:X11 应用，可以发现效果和之前手动启动是一样的。</p>
+<script src="https://giscus.app/client.js"
+        data-repo="wsrj/wsrj.github.io"
+        data-repo-id="R_kgDOJ2llqA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOJ2llqM4Chyzg"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light_tritanopia"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+    </div>
+</div>
+                </main>
+                <div class="sidebar-mask" id="sidebar-mask"></div>
+            </div>
+            <!-- footer -->
+            <footer class="card">
+    <div class="copyright">
+        <p>Copyright © 2026
+                该昵称己被占用_
+        </p>
+        <p>Powered by Hexo</p>
+    </div>
+</footer>
+    </div>
+
+    <script src="/js/responsive.js"></script>
+    <script src="/js/music.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new Pjax({
+                elements: 'a[href]:not([target]):not([data-no-pjax])',
+                selectors: [
+                    'title',
+                    '#pjax-container',
+                    '#pjax-header'
+                ]
+            })
+        })
+    </script>
+    
+</body>
+
+</html>
